@@ -16,23 +16,19 @@ import com.mindtree.restsample.dao.EmployeeCrud;
 import com.mindtree.restsample.dto.Employee;
 import com.mindtree.restsample.service.EmployeeService;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 
 @Path("/EmpMgt")
-@Api(value = "EmpMgt", description = "REST Apis related to Employee Entity!!!!")
+//@Api(value = "EmpMgt", description = "REST Apis related to Employee Entity!!!!")
 public class EmployeeRest {
 
 	@PUT
 	@Path("/addEmp")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	@ApiOperation(value = "Add Employees to Database", response = List.class, tags = "getAllEmpDetails")
+	/*@ApiOperation(value = "Add Employees to Database", response = List.class, tags = "getAllEmpDetails")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Suceess|OK"),
-            @ApiResponse(code = 404, message = "not found!!!") })
+            @ApiResponse(code = 404, message = "not found!!!") })*/
 	public Response createEmployee(Employee e) {
 		EmployeeService service = new EmployeeService();
 		service.addEmployee(e);
@@ -43,11 +39,11 @@ public class EmployeeRest {
 	@Path("/deleteEmp/{empid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	@ApiOperation(value = "Get list of Employees", response = List.class, tags = "getAllEmpDetails")
+	/*@ApiOperation(value = "Get list of Employees", response = List.class, tags = "getAllEmpDetails")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Suceess|OK"),
             @ApiResponse(code = 401, message = "not authorized!"),
-            @ApiResponse(code = 404, message = "not found!!!") })
+            @ApiResponse(code = 404, message = "not found!!!") })*/
 	public Response createEmployee(@PathParam("empid") String empid) {
 		EmployeeService service = new EmployeeService();
 		service.deleteEmployee(empid);
@@ -58,11 +54,11 @@ public class EmployeeRest {
 	@Path("/getAllEmpDetails")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	@ApiOperation(value = "Get list of Employees", response = List.class, tags = "getAllEmpDetails")
+	/*@ApiOperation(value = "Get list of Employees", response = List.class, tags = "getAllEmpDetails")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Suceess|OK"),
             @ApiResponse(code = 401, message = "not authorized!"),
-            @ApiResponse(code = 404, message = "not found!!!") })
+            @ApiResponse(code = 404, message = "not found!!!") })*/
 	public Response getAllEmployees() {
 		EmployeeService service = new EmployeeService();
 		List<Employee> l = service.getAllEmployees();

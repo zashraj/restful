@@ -7,12 +7,12 @@ import javax.persistence.Table;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-import io.swagger.annotations.ApiModel;
+//import io.swagger.annotations.ApiModel;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "employee")
-@ApiModel( value = "Employee")
+//@ApiModel( value = "Employee")
 public class Employee {
 
 	@Id
